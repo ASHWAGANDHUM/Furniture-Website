@@ -1,0 +1,203 @@
+@media (max-width: 767px) {
+    .center {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .top {
+        padding-top: 32px;
+    }
+    .header {
+        border: none;
+        &__logo-img {
+            width: 99px;
+        }
+        &__input {
+            display: none;
+        }
+        &__menu {
+            display: none;
+        }
+    }
+    .menu-mobile {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+    }
+    .content {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        &__title {
+            font-size: 48px;
+            line-height: 59px;
+            text-align: center;
+        }
+        &__text {
+            font-size: 16px;
+        }
+        &__link {
+            font-size: 14px;
+        }
+    }
+    .heading {
+        font-size: 24px;
+        line-height: 29px;
+    }
+    .for {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        &__item {
+            grid-column: 1 / -1;
+            height: 375px;
+            font-size: 28px;
+            line-height: 34px;
+            &_big {
+                height: 244px;
+            }
+        }
+    }
+    .product-content {
+        gap: 32px;
+    }
+    .product {
+        &__name {
+            font-size: 18px;
+            line-height: 22px;
+            margin-top: 9px;
+        }
+        &__desc {
+            margin-bottom: 8px;
+        }
+        &__price {
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+    .link-box {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .footer {
+        padding-bottom: 32px;
+        &__content {
+            gap: 70px;
+            align-items: center;
+            flex-direction: column;
+        }
+        &__info {
+            gap: 100px;
+        }
+        &__form {
+            padding-left: 40px;
+        }
+    }
+
+    /* КАТАЛОГ */
+
+    .top-catalog {
+        padding-top: 32px;
+        padding-bottom: 170px;
+        &__title {
+            padding-top: 82px;
+            font-size: 48px;
+            line-height: 59px;
+            text-align: center;
+        }
+    }
+    .catalog {
+        padding-top: 32px;
+    }
+    .catalog-heading {
+        margin-bottom: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 14px;
+        align-items: flex-start;
+        &__addres {
+            font-size: 14px;
+        }
+        &__list {
+            display: flex;
+            flex-direction: column-reverse;
+            position: relative;
+            align-items: flex-start;
+            &__order {
+                font-size: 14px;
+                line-height: 17px;
+                padding-left: 19px;
+            }
+        }
+    }
+    .filter-button {
+        font-size: 14px;
+        line-height: 17px;
+        padding-left: 19px;
+    }
+    .catalog-box {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 32px;
+    }
+    .filter-form {
+        left: 0;
+        &__content {
+            min-width: 190px;
+            max-height: 900px;
+        }
+    }
+
+    /* КОРЗИНА */
+
+    .top-cart {
+        padding-top: 32px;
+        padding-bottom: 170px;
+        &__title {
+            padding-top: 82px;
+            font-size: 48px;
+            line-height: 59px;
+            text-align: center;
+        }
+    }
+    .cart {
+        margin-top: 92px;
+        row-gap: 42px;
+        &__name-box {
+            display: none;
+        }
+        &__item {
+            padding-top: 18px;
+            padding-bottom: 24px;
+        }
+        &__img {
+            display: none;
+        }
+        &__info-title {
+            font-size: 18px;
+            line-height: 22px;
+        }
+        &__info-desc {
+            font-size: 12px;
+            line-height: 15px;
+        }
+        &__info-price {
+            font-size: 12px;
+            line-height: 15px;
+        }
+        &__button-box {
+            gap: 14px;
+        }
+        &__button {
+            font-size: 12px;
+            line-height: 15px;
+            max-width: 166px;
+            &_continue {
+            max-width: 163px;
+            }
+        }
+        &__form {
+            grid-column: span 8;
+        }
+    }
+}

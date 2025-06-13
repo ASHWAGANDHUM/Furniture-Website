@@ -1,0 +1,276 @@
+/* Общий стиль для кнопок */
+.button {
+    font: inherit;
+    box-sizing: border-box;
+    border: 1px solid $color-base;
+    border-radius: 20px;
+    min-height: 40px;
+    padding: 10px 23px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+/* Кнопка фильтрации */
+.filter-button {
+    border-color: rgb(196, 196, 196); /* Цвет рамки изменен со стандарта на серый*/
+    font-size: 16px;
+    font-weight: 500;
+    padding-left: 23px;
+    padding-right: 54px;
+    text-align: start;
+    background-image: url(images/polygon.svg);
+    background-repeat: no-repeat;
+    background-position: right 22px center;
+    color: $color-base;
+    transition: 1s;
+    &:hover {
+        border-color: $color-base;
+    }
+}
+.filter-form {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: -360px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 36px;
+    padding: 40px 48px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 67px -12px rgba(0, 0, 0, 0.32);
+    z-index: 1;
+    &__content {
+        min-width: 448px;
+        max-height: 392px;
+        display: flex;
+        flex-flow: column wrap;
+        gap: 32px 65px;
+    }
+    &__fieldset {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        padding: 0px;
+        border: none;
+        &_right { // Отступ для правого файлдсета
+            padding-right: 40px;
+        }
+    }
+    &__legend {
+        font-size: 16px;
+        color: rgb(5, 5, 5);
+        font-weight: 500;
+        line-height: 20px;
+        margin-bottom: 14px;
+    }
+    &__button {
+        align-self: flex-end;
+        max-width: 190px;
+        width: 100%;
+        color: $color-base;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        transition: 1s;
+        &:hover {
+            background-color: $color-base;
+            color: $color-text;
+        }
+    }
+}
+/* СРОК ДАВНОСТИ / ПЕРЕКЛЮЧАТЕЛЬ */
+.radio  {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    &__input {
+        appearance: none;
+        border: 1px solid rgb(136, 136, 136);
+        border-radius: 50%;
+        background-color: rgb(255, 255, 255);
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+        &:checked {
+            border-color: $color-base;
+            background-image: url(images/check.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    &__label {
+        display: flex;
+        align-items: center;
+        color: $color-base;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+        cursor: pointer;
+    }
+}
+/* ПОЛЗУНКИ / БЕГУНКИ */
+.range {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 14px;
+    &__label {
+        color: $color-base;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+    }
+    &__input-box {
+        position: relative;
+        display: inline-block;
+        height: 8px;
+    }
+    &__input {
+        overflow: hidden;
+        outline: none;
+        width: 190px;
+        height: 10px;
+        position: absolute;
+        left: 0;
+        -webkit-appearance: none;
+        &::-webkit-slider-runnable-track {
+            -webkit-appearance: none;
+            height: 1px;
+            background-color: $color-base;
+        }
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            position: relative;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: $color-base;
+            margin-top: -4px;
+            cursor: pointer;
+            z-index: 1;
+        }
+        &::-webkit-slider-thumb:active {
+            cursor: grabbing; /* Эффект захвата при зажатии бегунка */
+          }
+        &:nth-child(1)::-webkit-slider-thumb {
+            z-index: 2;
+        }
+    }
+}
+/* ЦВЕТОВЫЕ ЧЕКБОКСЫ */
+.color-options {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 190px;
+    gap: 14px;
+    &__checkbox {
+        width: 15px;
+        height: 15px;
+    }
+}
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    &__input {
+        display: none;
+        &:checked + .checkbox__label::before {
+            border-color: $color-base;
+            background-image: url(images/check.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        &:checked + .checkbox__label_black::before { /* белая галочка для черного фона */
+            border-color: $color-base;
+            background-image: url(images/check-white.svg);
+            background-size: 7px 7px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        &:checked + .checkbox__label_blue::before {/* белая галочка для синего фона */
+            border-color: $color-base;
+            background-image: url(images/check-white.svg);
+            background-size: 7px 7px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        &:checked + .checkbox__label_purple::before { /* белая галочка для пурпурного фона */
+            border-color: $color-base;
+            background-image: url(images/check-white.svg);
+            background-size: 7px 7px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    &__label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        padding-left: 28px;
+        font-size: 14px;
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 1px solid rgb(136, 136, 136);
+            position: absolute;
+            left: 0;
+            background-color: rgb(255, 255, 255);
+        }
+        &_white::before {
+            background-color: rgb(255, 255, 255);
+        }
+        &_black::before {
+            background-color: rgb(0, 0, 0);
+            border-color: rgb(0, 0, 0);
+        }
+        &_gray::before {
+            background-color: rgb(115, 115, 115);
+            border-color: rgb(115, 115, 115);
+        }
+        &_red::before {
+            background-color: rgb(255, 0, 0);
+            border-color:  rgb(255, 0, 0);
+        }
+        &_orange::before {
+            background-color: rgb(255, 122, 65);
+            border-color: rgb(255, 122, 65);
+        }
+        &_yellow::before {
+            background-color: rgb(242, 203, 1);
+            border-color: rgb(242, 203, 1);
+        }
+        &_green::before {
+            background-color: rgb(0, 191, 42);
+            border-color: rgb(0, 191, 42);
+        }
+        &_teal::before {
+            background-color: rgb(28, 204, 151);
+            border-color: rgb(28, 204, 151);
+        }
+        &_light-blue::before {
+            background-color: rgb(0, 159, 227);
+            border-color: rgb(0, 159, 227);
+        }
+        &_blue::before {
+            background-color: rgb(0, 10, 248);
+            border-color: rgb(0, 10, 248);
+        }
+        &_purple::before {
+            background-color: rgb(103, 16, 214);
+            border-color: rgb(103, 16, 214);
+        }
+        &_violet::before {
+            background-color: rgb(157, 13, 181);
+            border-color: rgb(157, 13, 181);
+        }
+        &_lavender::before {
+            background-color: rgb(216, 154, 255);
+            border-color: rgb(216, 154, 255);
+        }
+        &_pink::before {
+            background-color: rgb(255, 101, 166);
+            border-color: rgb(255, 101, 166);
+        }
+    }
+}

@@ -1,0 +1,59 @@
+@media (max-width: 1024px) {
+    .center {
+        padding-left: calc(50% - 786px/2);
+        padding-right: calc(50% - 786px/2);
+    }
+    .for {
+        &__item {
+            height: 268px;
+            &_big {
+                height: 265px;
+            }
+        }
+    }
+    .product-content {
+        column-gap: 29px;
+        row-gap: 38px;
+        &_cart {
+            row-gap: 30px;
+        }
+    }
+    .link-box {
+        margin-top: 40px;
+    }
+    .footer {
+        &__logo {
+            display: none;
+        }
+    }
+    .catalog-box {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    .cart {
+        grid-template-columns: repeat(8, 1fr);
+        row-gap: 64px;
+        &__button {
+            &_continue {
+                background-color: $color-base;
+                color: $color-text;
+            }
+        }
+        &__form {
+            max-width: 376px;
+        }
+    }
+    .product-box {
+        padding-top: 3rem; // 64px, т.к. 1rem по умолчанию 16px у меня...
+    }
+}
+
+@media (min-width: 768px) and (max-width: 833px) {
+    .center {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    .product {
+        width: 345px;
+    }
+}
