@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -18,7 +18,44 @@
             <input class="header__input" type="text" placeholder="Поиск">
             <nav class="header__menu">
                 <a class="header__menu-link" href="catalog.html">Каталог</a>
-                <a class="header__menu-link" href="cart.html">Корзина</a>
+                <span class="header__menu-link">Корзина</span>
+                <div class="cart-modal">
+                    <div class="cart-modal__content">
+                        <div class="cart-modal__item">
+                            <div class="cart-modal__item-content">
+                                <img class="cart-modal__item-img" src="./images/cart-modal1.jpeg" alt="Стол MENU">
+                                <div class="cart-modal__item-info">
+                                    <h4 class="cart-modal__item-title">Стол MENU</h4>
+                                    <p class="cart-modal__item-price">34 000 руб.</p>
+                                    <div class="cart-modal__link-box">
+                                        <a class="cart-modal__link" href="#">Избранные</a>
+                                        <a class="cart-modal__link" href="#">Удалить</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <input class="cart-modal__volume" type="number" value="1" min="1">
+                        </div>
+                        <div class="cart-modal__border"></div>
+                        <div class="cart-modal__item cart-modal__item">
+                            <div class="cart-modal__item-content">
+                                <img class="cart-modal__item-img" src="./images/cart-modal2.jpeg" alt="Стол MENU">
+                                <div class="cart-modal__item-info">
+                                    <h4 class="cart-modal__item-title">Диван NASTAN</h4>
+                                    <p class="cart-modal__item-price">80 000 руб.</p>
+                                    <div class="cart-modal__link-box">
+                                        <a class="cart-modal__link" href="#">Избранные</a>
+                                        <a class="cart-modal__link" href="#">Удалить</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <input class="cart-modal__volume" type="number" value="1" min="1">
+                        </div>
+                        <div class="cart-modal__order">
+                            <span class="cart-modal__amount">Итого:  114 000 руб.</span>
+                            <button class="cart-modal__button">Оформить заказ</button>
+                        </div>
+                    </div>
+                </div>
             </nav>
             <div class="menu-mobile">
                 <a class="menu-mobile__link" href="#"><img src="images/search.svg" alt="Поиск"></a>
@@ -342,6 +379,27 @@
             </form>
         </div>
     </footer>
+    <script>
+        const formEl = document.querySelector('.filter-form');
+        const filterBtnEl = document.querySelector('.filter-button');
+
+        filterBtnEl.addEventListener('click', () => {
+            formEl.classList.toggle('filter-form_show');
+        });
+
+        const linkEl = document.querySelectorAll('.header__menu-link');
+        const modalEl = document.querySelector('.cart-modal');
+
+        linkEl[1].addEventListener('click', () => {
+            modalEl.classList.toggle('cart-modal_show');
+        });
+
+        const buttonEl = document.querySelector('.cart-modal__button');
+
+        buttonEl.addEventListener('click', () => {
+            window.location.href = 'cart.html';
+        });
+    </script>
 </body>
 
 </html>

@@ -52,17 +52,130 @@ body {
     &__menu {
         display: flex;
         gap: 32px;
+        position: relative;
     }
     &__menu-link {
         font-weight: 400;
         font-size: 16px;
         line-height: 20px;
         color: $color-text;
+        cursor: pointer;
         &:hover {
             text-decoration: underline;
         }
     }
 }
+
+// МОДАЛЬНОЕ ОКНО КОРЗИНЫ
+.cart-modal {
+    position: absolute;
+    z-index: 1;
+    top: 38px;
+    left: -403px;
+    box-sizing: border-box;
+    padding: 40px 48px;
+    background-color: rgb(255, 255, 255);
+    width: 573px;
+    box-shadow: 0px 4px 67px -12px rgba(0, 0, 0, 0.32);
+    opacity: 0; /* Начальное состояние: полностью прозрачное */
+    visibility: hidden; /* Начальное состояние: скрыто */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Плавный переход */
+    &__content {
+        display: flex;
+        flex-flow: column wrap;
+        gap: 24px;
+    }
+    &__item {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    &__item-content {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 24px;
+    }
+    &__item-title {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        color: $color-base;
+        margin-bottom: 12px;
+    }
+    &__item-price {
+        color: rgb(5, 5, 5);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+    }
+    &__link-box {
+        margin-top: 54px;
+        font-size: 14px;
+        font-weight: 400;
+        text-decoration-line: underline;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+    &__link {
+        color: $color-base;
+    }
+    &__volume {
+    width: 71px;
+    height: 51px;
+    background: rgb(247, 246, 246);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    color: $color-base;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+        &::-webkit-inner-spin-button {
+            cursor: pointer;
+        }
+    }
+    &__border {
+        border-bottom: 0.5px solid rgb(202, 205, 216);
+    }
+    &__order {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__amount {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        color: $color-base;
+    }
+    &__button {
+        padding: 10px 35px;
+        box-sizing: border-box;
+        border: 1px solid rgb(4, 4, 4);
+        border-radius: 20px;
+        background-color: transparent;
+        font: inherit;
+        color: $color-base;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        transition: 1s;
+        &:hover {
+            background-color: $color-base;
+            color: $color-text;
+        }
+    }
+    &_show {
+        opacity: 1; /* Конечное состояние: полностью видимое */
+        visibility: visible; /* Конечное состояние: видимо */
+    }
+}
+
+
 .menu-mobile {
     display: none;
 }
