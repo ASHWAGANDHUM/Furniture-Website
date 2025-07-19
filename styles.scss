@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
 }
-/* Убрать нижнее подчеркивание со всех ссылок */
+
 a {
     text-decoration: none;
 }
@@ -30,14 +30,17 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    &__input { /* Текст "поиск" в строке ввода */
+    &__logo {
+        margin-top: 6px;
+        margin-left: 4px;
+    }
+    &__input {
         width: 288px;
         height: 41px;
         outline: none;
         box-sizing: border-box;
         border: 1px solid $color-text;
         border-radius: 20px;
-        /* прозрачная строка ввода */
         background-color: transparent;
         font: inherit;
         font-weight: 400;
@@ -66,7 +69,6 @@ body {
     }
 }
 
-// МОДАЛЬНОЕ ОКНО КОРЗИНЫ
 .cart-modal {
     position: absolute;
     z-index: 1;
@@ -77,9 +79,9 @@ body {
     background-color: rgb(255, 255, 255);
     width: 573px;
     box-shadow: 0px 4px 67px -12px rgba(0, 0, 0, 0.32);
-    opacity: 0; /* Начальное состояние: полностью прозрачное */
-    visibility: hidden; /* Начальное состояние: скрыто */
-    transition: opacity 0.5s ease, visibility 0.5s ease; /* Плавный переход */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
     &__content {
         display: flex;
         flex-flow: column wrap;
@@ -170,8 +172,8 @@ body {
         }
     }
     &_show {
-        opacity: 1; /* Конечное состояние: полностью видимое */
-        visibility: visible; /* Конечное состояние: видимо */
+        opacity: 1;
+        visibility: visible;
     }
 }
 
@@ -184,20 +186,20 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     gap: 16px;
-    &__title { /* Всё, чего заслуживает ваш дом */
+    &__title {
         font-weight: 600;
         font-size: 64px;
         line-height: 70px;
         color: $color-text;
         text-align: left;
     }
-    &__text { /* Наша мебель - ваше отражение */
+    &__text {
         font-weight: 400;
         font-size: 24px;
         line-height: 32px;
         color: $color-text;
     }
-    &__link { /* Перейти в каталог (ссылка верхняя) */
+    &__link {
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
@@ -230,10 +232,6 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: 1s ease;
-        &:hover {
-            font-size: 38px;
-        }
     }
     &__item_big {
         grid-column: span 6;
@@ -270,7 +268,7 @@ body {
     }
 }
 .product-box {
-    padding-top: 64px;
+    padding-top: 74px;
 }
 .product-content {
     margin-top: 32px;
@@ -324,7 +322,7 @@ body {
 .link-box {
     margin-top: 32px;
     margin-bottom: 64px;
-    &__link {/* свойства для нижней ссылки "Перейти в каталог" для ссылки внутри блока с классом .link-box */
+    &__link {
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
@@ -334,7 +332,6 @@ body {
 }
 
 .footer {
-    /* height: 207px; */
     padding-top: 32px;
     padding-bottom: 52px;
     background-color: rgb(247, 246, 246);
@@ -357,25 +354,21 @@ body {
         flex-wrap: wrap;
         row-gap: 12px;
     }
-    /* Меню и контакты */
     &__menu {
         font-weight: 500;
         font-size: 24px;
         line-height: 29px;
         color: $color-base;
     }
-    /* Все ссылки (за исключением навигации) */
     &__link {
         font-weight: 500;
         font-size: 14px;
         line-height: 17px;
         color: #888888;
     }
-    /* Добавление подчеркивания у ссылок при наведении курсора */
     &__link:hover {
         text-decoration: underline;
     }
-    /* Стилизация иконок */
     &__icons {
         display: flex;
         flex-wrap: wrap;

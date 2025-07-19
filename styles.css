@@ -4,7 +4,6 @@
   padding: 0;
 }
 
-/* Убрать нижнее подчеркивание со всех ссылок */
 a {
   text-decoration: none;
 }
@@ -35,14 +34,17 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.header__input { /* Текст "поиск" в строке ввода */
+.header__logo {
+  margin-top: 6px;
+  margin-left: 4px;
+}
+.header__input {
   width: 288px;
   height: 41px;
   outline: none;
   box-sizing: border-box;
   border: 1px solid #FFFFFF;
   border-radius: 20px;
-  /* прозрачная строка ввода */
   background-color: transparent;
   font: inherit;
   font-weight: 400;
@@ -83,9 +85,9 @@ body {
   background-color: rgb(255, 255, 255);
   width: 573px;
   box-shadow: 0px 4px 67px -12px rgba(0, 0, 0, 0.32);
-  opacity: 0; /* Начальное состояние: полностью прозрачное */
-  visibility: hidden; /* Начальное состояние: скрыто */
-  transition: opacity 0.5s ease, visibility 0.5s ease; /* Плавный переход */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 .cart-modal__content {
   display: flex;
@@ -177,8 +179,8 @@ body {
   color: #FFFFFF;
 }
 .cart-modal_show {
-  opacity: 1; /* Конечное состояние: полностью видимое */
-  visibility: visible; /* Конечное состояние: видимо */
+  opacity: 1;
+  visibility: visible;
 }
 
 .menu-mobile {
@@ -192,20 +194,20 @@ body {
   flex-wrap: wrap;
   gap: 16px;
 }
-.content__title { /* Всё, чего заслуживает ваш дом */
+.content__title {
   font-weight: 600;
   font-size: 64px;
   line-height: 70px;
   color: #FFFFFF;
   text-align: left;
 }
-.content__text { /* Наша мебель - ваше отражение */
+.content__text {
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
   color: #FFFFFF;
 }
-.content__link { /* Перейти в каталог (ссылка верхняя) */
+.content__link {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -240,10 +242,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 1s ease;
-}
-.for__item:hover {
-  font-size: 38px;
 }
 .for__item_big {
   grid-column: span 6;
@@ -280,7 +278,7 @@ body {
 }
 
 .product-box {
-  padding-top: 64px;
+  padding-top: 74px;
 }
 
 .product-content {
@@ -338,7 +336,7 @@ body {
   margin-top: 32px;
   margin-bottom: 64px;
 }
-.link-box__link { /* свойства для нижней ссылки "Перейти в каталог" для ссылки внутри блока с классом .link-box */
+.link-box__link {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -347,7 +345,6 @@ body {
 }
 
 .footer {
-  /* height: 207px; */
   padding-top: 32px;
   padding-bottom: 52px;
   background-color: rgb(247, 246, 246);
@@ -355,10 +352,6 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* Меню и контакты */
-  /* Все ссылки (за исключением навигации) */
-  /* Добавление подчеркивания у ссылок при наведении курсора */
-  /* Стилизация иконок */
 }
 .footer__content {
   display: flex;
@@ -523,7 +516,7 @@ body {
 .catalog-box {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  row-gap: 48px;
+  row-gap: 54px;
   -moz-column-gap: 32px;
        column-gap: 32px;
 }
@@ -572,6 +565,7 @@ body {
 }
 .cart__name-box {
   padding-bottom: 14px;
+  padding-right: 27px;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -613,12 +607,14 @@ body {
   line-height: 17px;
 }
 .cart__info-price {
+  margin-top: 2px;
   color: rgb(5, 5, 5);
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
 }
 .cart__link-box {
+  margin-top: 6px;
   font-size: 14px;
   font-weight: 400;
   text-decoration-line: underline;
@@ -682,7 +678,7 @@ body {
   align-items: center;
 }
 .cart__form-heading {
-  margin-top: 42px;
+  margin-top: 48px;
   margin-bottom: 35px;
   color: #000000;
   font-size: 24px;
@@ -755,7 +751,6 @@ body {
     color: #FFFFFF;
   }
 }
-/* Общий стиль для кнопок */
 .button {
   font: inherit;
   box-sizing: border-box;
@@ -767,9 +762,8 @@ body {
   cursor: pointer;
 }
 
-/* Кнопка фильтрации */
 .filter-button {
-  border-color: rgb(196, 196, 196); /* Цвет рамки изменен со стандарта на серый*/
+  border-color: rgb(196, 196, 196);
   font-size: 16px;
   font-weight: 500;
   padding-left: 23px;
@@ -797,9 +791,9 @@ body {
   background-color: rgb(255, 255, 255);
   box-shadow: 0px 4px 67px -12px rgba(0, 0, 0, 0.32);
   z-index: 1;
-  opacity: 0; /* Начальное состояние: полностью прозрачное */
-  visibility: hidden; /* Начальное состояние: скрыто */
-  transition: opacity 0.5s ease, visibility 0.5s ease; /* Плавный переход */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 .filter-form__content {
   min-width: 448px;
@@ -840,11 +834,10 @@ body {
   color: #FFFFFF;
 }
 .filter-form_show {
-  opacity: 1; /* Конечное состояние: полностью видимое */
-  visibility: visible; /* Конечное состояние: видимо */
+  opacity: 1;
+  visibility: visible;
 }
 
-/* СРОК ДАВНОСТИ / ПЕРЕКЛЮЧАТЕЛЬ */
 .radio {
   display: flex;
   align-items: center;
@@ -877,7 +870,6 @@ body {
   cursor: pointer;
 }
 
-/* ПОЛЗУНКИ / БЕГУНКИ */
 .range {
   display: flex;
   flex-flow: column wrap;
@@ -920,13 +912,12 @@ body {
   z-index: 1;
 }
 .range__input::-webkit-slider-thumb:active {
-  cursor: grabbing; /* Эффект захвата при зажатии бегунка */
+  cursor: grabbing;
 }
 .range__input:nth-child(1)::-webkit-slider-thumb {
   z-index: 2;
 }
 
-/* ЦВЕТОВЫЕ ЧЕКБОКСЫ */
 .color-options {
   display: flex;
   flex-flow: row wrap;
@@ -952,21 +943,21 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
-.checkbox__input:checked + .checkbox__label_black::before { /* белая галочка для черного фона */
+.checkbox__input:checked + .checkbox__label_black::before {
   border-color: #000000;
   background-image: url(images/check-white.svg);
   background-size: 7px 7px;
   background-repeat: no-repeat;
   background-position: center;
 }
-.checkbox__input:checked + .checkbox__label_blue::before { /* белая галочка для синего фона */
+.checkbox__input:checked + .checkbox__label_blue::before {
   border-color: #000000;
   background-image: url(images/check-white.svg);
   background-size: 7px 7px;
   background-repeat: no-repeat;
   background-position: center;
 }
-.checkbox__input:checked + .checkbox__label_purple::before { /* белая галочка для пурпурного фона */
+.checkbox__input:checked + .checkbox__label_purple::before {
   border-color: #000000;
   background-image: url(images/check-white.svg);
   background-size: 7px 7px;

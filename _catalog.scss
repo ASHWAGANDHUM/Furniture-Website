@@ -1,5 +1,4 @@
 .top-catalog {
-    // height: 400px;
     padding-bottom: 126px;
     background-image: url(./images/catalogback.jpeg);
     background-repeat: no-repeat;
@@ -40,7 +39,7 @@
         position: relative;
     }
     &__order {
-        -webkit-appearance: none; // убрать стандартную стрелку
+        -webkit-appearance: none;
         font: inherit;
         cursor: pointer;
         outline: none;
@@ -54,7 +53,6 @@
         background-color: rgb(255, 255, 255);
         font-weight: 400;
         font-size: 16px;
-        // width: 227px; лишнее, как по мне
         background-image: url(images/polygon.svg);
         background-repeat: no-repeat;
         background-position: right 22px center;
@@ -69,7 +67,7 @@
 .catalog-box {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    row-gap: 48px;
+    row-gap: 54px;
     column-gap: 32px;
 }
 .product {

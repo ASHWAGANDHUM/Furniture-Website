@@ -1,4 +1,3 @@
-/* Общий стиль для кнопок */
 .button {
     font: inherit;
     box-sizing: border-box;
@@ -9,9 +8,9 @@
     background-color: rgb(255, 255, 255);
     cursor: pointer;
 }
-/* Кнопка фильтрации */
+
 .filter-button {
-    border-color: rgb(196, 196, 196); /* Цвет рамки изменен со стандарта на серый*/
+    border-color: rgb(196, 196, 196);
     font-size: 16px;
     font-weight: 500;
     padding-left: 23px;
@@ -38,9 +37,9 @@
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 4px 67px -12px rgba(0, 0, 0, 0.32);
     z-index: 1;
-    opacity: 0; /* Начальное состояние: полностью прозрачное */
-    visibility: hidden; /* Начальное состояние: скрыто */
-    transition: opacity 0.5s ease, visibility 0.5s ease; /* Плавный переход */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
     &__content {
         min-width: 448px;
         max-height: 392px;
@@ -54,7 +53,7 @@
         gap: 14px;
         padding: 0px;
         border: none;
-        &_right { // Отступ для правого файлдсета
+        &_right {
             padding-right: 40px;
         }
     }
@@ -80,11 +79,11 @@
         }
     }
     &_show {
-        opacity: 1; /* Конечное состояние: полностью видимое */
-        visibility: visible; /* Конечное состояние: видимо */
+        opacity: 1;
+        visibility: visible;
     }
 }
-/* СРОК ДАВНОСТИ / ПЕРЕКЛЮЧАТЕЛЬ */
+
 .radio  {
     display: flex;
     align-items: center;
@@ -114,7 +113,7 @@
         cursor: pointer;
     }
 }
-/* ПОЛЗУНКИ / БЕГУНКИ */
+
 .range {
     display: flex;
     flex-flow: column wrap;
@@ -155,14 +154,14 @@
             z-index: 1;
         }
         &::-webkit-slider-thumb:active {
-            cursor: grabbing; /* Эффект захвата при зажатии бегунка */
+            cursor: grabbing;
           }
         &:nth-child(1)::-webkit-slider-thumb {
             z-index: 2;
         }
     }
 }
-/* ЦВЕТОВЫЕ ЧЕКБОКСЫ */
+
 .color-options {
     display: flex;
     flex-flow: row wrap;
@@ -185,21 +184,21 @@
             background-repeat: no-repeat;
             background-position: center;
         }
-        &:checked + .checkbox__label_black::before { /* белая галочка для черного фона */
+        &:checked + .checkbox__label_black::before {
             border-color: $color-base;
             background-image: url(images/check-white.svg);
             background-size: 7px 7px;
             background-repeat: no-repeat;
             background-position: center;
         }
-        &:checked + .checkbox__label_blue::before {/* белая галочка для синего фона */
+        &:checked + .checkbox__label_blue::before {
             border-color: $color-base;
             background-image: url(images/check-white.svg);
             background-size: 7px 7px;
             background-repeat: no-repeat;
             background-position: center;
         }
-        &:checked + .checkbox__label_purple::before { /* белая галочка для пурпурного фона */
+        &:checked + .checkbox__label_purple::before {
             border-color: $color-base;
             background-image: url(images/check-white.svg);
             background-size: 7px 7px;
